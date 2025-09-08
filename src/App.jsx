@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import Books from './pages/Books';
 import Cart from './pages/Cart';
 import AdminDashboard from './pages/AdminDashboard';
+import PaymentForm from './pages/PaymentForm';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/books" element={<Books />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/payment" element={<PaymentForm />} />
             </Routes>
           </div>
         </div>

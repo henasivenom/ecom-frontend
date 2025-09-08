@@ -73,16 +73,17 @@ const BookCard = ({ book }) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto"
     >
-      <div className="relative aspect-w-2 aspect-h-3">
+      <motion.div 
+        className="relative w-full h-[400px] flex justify-center items-center bg-gray-100 overflow-hidden"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+      >
         <img
-          src={book.imageUrl || 'https://via.placeholder.com/300x450?text=No+Image'}
+          src="https://dummyimage.com/200x300/b0b0b0/ffffff.jpg&text=Book+Cover"
           alt={book.title}
-          className="w-full h-full object-cover transition-transform duration-300 ease-out"
+          className="w-[200px] h-[300px] object-cover transition-transform duration-300 ease-out rounded-lg shadow-md"
           style={{
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',
           }}
@@ -121,7 +122,7 @@ const BookCard = ({ book }) => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       <div className="p-5">
         <div className="flex justify-between items-start mb-2">

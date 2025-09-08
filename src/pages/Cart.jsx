@@ -100,7 +100,7 @@ const Cart = () => {
       
       if (response.ok) {
         setCartItems([]);
-        navigate('/orders');
+        navigate('/payment');
       } else {
         setError(data.message || 'Failed to place order');
       }
